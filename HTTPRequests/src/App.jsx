@@ -65,6 +65,8 @@ function App() {
 
   const handleRemovePlace = useCallback(async function handleRemovePlace() {
     console.log("handleRemovePlace")
+    
+    
     setUserPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current.id)
     );
