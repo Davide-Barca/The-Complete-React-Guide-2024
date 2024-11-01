@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import Header from "./components/Header";
 import Meals from "./components/Meals";
-import { CartContextProvider } from "./store/cartContext";
 import { UserProgressContextProvider } from "./store/UserProgressContext";
+import { CartContextProvider } from "./store/cartContext";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <main>
           <Meals />
           <Cart />
+          <Checkout />
         </main>
       </CartContextProvider>
     </UserProgressContextProvider>
