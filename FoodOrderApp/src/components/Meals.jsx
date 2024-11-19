@@ -1,16 +1,18 @@
 import Meal from "./Meal";
-import { useFetch } from "../hooks/useFetch";
+import { useHTTP } from "../hooks/useFetch";
 import { getAvailableMeals } from "../http/getRequests";
 
 
 const API_ADDRESS = "http://localhost:3000";
 
+const requestConfig = {}
+
 export default function Meals() {
   const {
-    fetchedData: availableMeals,
-    isFetching,
+    data: availableMeals,
+    isLoading,
     error,
-  } = useFetch(getAvailableMeals, []);
+  } = useHTTP("http://localhost:3000/meals", requestConfig, []);
 
   return (
     <ul id="meals">
